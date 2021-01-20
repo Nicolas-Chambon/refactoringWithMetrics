@@ -96,13 +96,13 @@ public class Trivia {
 	}
 
 	private void askQuestion() {
-		if (currentCategory().equals("Pop"))
+		if (currentCategory().equals(POP))
 			System.out.println(popQuestions.removeFirst());
-		if (currentCategory().equals("Science"))
+		if (currentCategory().equals(SCIENCE))
 			System.out.println(scienceQuestions.removeFirst());
-		if (currentCategory().equals("Sports"))
+		if (currentCategory().equals(SPORTS))
 			System.out.println(sportsQuestions.removeFirst());
-		if (currentCategory().equals("Rock"))
+		if (currentCategory().equals(ROCK))
 			System.out.println(rockQuestions.removeFirst());		
 	}
 	
