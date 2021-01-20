@@ -14,9 +14,16 @@ public class Trivia {
     LinkedList scienceQuestions = new LinkedList();
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
-    
-    int currentPlayer = 0;
+
+	public static String SPORTS = "Sports";
+	public static String POP = "Pop";
+	public static String SCIENCE = "Science";
+	public static String ROCK = "Rock";
+
+	int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
+
+
     
     public  Trivia(){
     	for (int i = 0; i < 50; i++) {
@@ -89,28 +96,36 @@ public class Trivia {
 	}
 
 	private void askQuestion() {
-		if (currentCategory() == "Pop")
+		if (currentCategory().equals("Pop"))
 			System.out.println(popQuestions.removeFirst());
-		if (currentCategory() == "Science")
+		if (currentCategory().equals("Science"))
 			System.out.println(scienceQuestions.removeFirst());
-		if (currentCategory() == "Sports")
+		if (currentCategory().equals("Sports"))
 			System.out.println(sportsQuestions.removeFirst());
-		if (currentCategory() == "Rock")
+		if (currentCategory().equals("Rock"))
 			System.out.println(rockQuestions.removeFirst());		
 	}
 	
 	
 	private String currentCategory() {
-		if (places[currentPlayer] == 0) return "Pop";
-		if (places[currentPlayer] == 4) return "Pop";
-		if (places[currentPlayer] == 8) return "Pop";
-		if (places[currentPlayer] == 1) return "Science";
-		if (places[currentPlayer] == 5) return "Science";
-		if (places[currentPlayer] == 9) return "Science";
-		if (places[currentPlayer] == 2) return "Sports";
-		if (places[currentPlayer] == 6) return "Sports";
-		if (places[currentPlayer] == 10) return "Sports";
-		return "Rock";
+
+		switch(places[currentPlayer]) {
+			case 0:
+			case 4:
+			case 8:
+				return POP;
+			case 1:
+			case 5:
+			case 9:
+				return SCIENCE;
+			case 2:
+			case 6:
+			case 10:
+				return SPORTS;
+			default:
+				return ROCK;
+		}
+
 	}
 
 	public boolean wasCorrectlyAnswered() {
@@ -165,6 +180,6 @@ public class Trivia {
 
 
 	private boolean didPlayerWin() {
-		return !(purses[currentPlayer] == 6);
+		return (purses[currentPlayer] != 6);
 	}
 }
