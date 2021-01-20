@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Code Quality') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=calculatrice-java -Dsonar.host.url=http://thedawndev.fr:9001 -Dsonar.login=fc9c79729b0dfa3d195d3966bd6e354cba9ec73d'
+                sh 'mvn sonar:sonar -Dsonar.projectKey=refactoring-with-metrics -Dsonar.host.url=http://thedawndev.fr:9001 -Dsonar.login=5ed72149bcd7ad53c6f0d45c1289bab9a97d0ddf'
             }
         }
     }
