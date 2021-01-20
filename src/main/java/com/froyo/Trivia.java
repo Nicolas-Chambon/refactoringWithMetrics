@@ -15,10 +15,10 @@ public class Trivia {
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
 
-	public static String SPORTS = "Sports";
-	public static String POP = "Pop";
-	public static String SCIENCE = "Science";
-	public static String ROCK = "Rock";
+    static final String SPORTS = "Sports";
+	static final String POP = "Pop";
+	static final String SCIENCE = "Science";
+	static final String ROCK = "Rock";
 
 	int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
