@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Code Quality') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=refactoring-with-metrics -Dsonar.host.url=http://thedawndev.fr:9001 -Dsonar.login=5ed72149bcd7ad53c6f0d45c1289bab9a97d0ddf'
+                sh 'mvn sonar:sonar'
             }
         }
     }
