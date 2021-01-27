@@ -6,11 +6,38 @@ import org.junit.Test;
 public class TriviaTest {
 
 	@Test
-	public void testTrivia() {
-		int result = 4;
-		if (result != 4) {   // if 2 + 2 != 4
-			Assert.fail();
-		}
+	public void createRockQuestion() {
+		assert true;
+	}
+
+	@Test
+	public void isPlayable() {
+		assert true;
+	}
+
+	@Test
+	public void add() {
+		assert true;
+	}
+
+	@Test
+	public void howManyPlayers() {
+		assert true;
+	}
+
+	@Test
+	public void roll() {
+		assert true;
+	}
+
+	@Test
+	public void wasCorrectlyAnswered() {
+		assert true;
+	}
+
+	@Test
+	public void wrongAnswer() {
+		assert true;
 	}
 
 }
