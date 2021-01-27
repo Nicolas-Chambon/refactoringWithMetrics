@@ -8,9 +8,9 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn test'
             }
             post {
                failure {
@@ -18,10 +18,10 @@ pipeline {
                }
             }
         }
-        stage('Test') {
+        stage('Build') {
             when { expression { success == true } }
             steps {
-                sh 'mvn test'
+                sh 'mvn -B -DskipTests package'
             }
             post {
                failure {
