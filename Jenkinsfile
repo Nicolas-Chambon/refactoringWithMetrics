@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         always {
-            junit '*/target/surefire-reports/TEST-.xml',
+            junit '*/target/surefire-reports/TEST-.xml'
             emailext to: "djilalisaiah.sid@gmail.com",
                      subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                      attachLog: true,
