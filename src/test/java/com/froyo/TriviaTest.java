@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 
 public class TriviaTest {
 
-//	@Test
-//	public void createRockQuestion() {
-//		Trivia trivia = new Trivia();
-//		assertEquals("Rock Question 5", trivia.createRockQuestion(5));
-//	}
+	@Test
+	public void createRockQuestion() {
+		Trivia trivia = new Trivia();
+		assertEquals("Rock Question 5", trivia.createRockQuestion(5));
+	}
 
 	@Test
 	public void isPlayable() {
