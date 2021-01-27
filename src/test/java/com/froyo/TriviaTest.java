@@ -1,43 +1,107 @@
 package com.froyo;
 
-import org.junit.Assert;
+
 import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 
 public class TriviaTest {
 
 	@Test
 	public void createRockQuestion() {
-		assert true;
+		Trivia trivia = new Trivia();
+		assertEquals("Rock Question 5", trivia.createRockQuestion(5));
 	}
 
 	@Test
 	public void isPlayable() {
-		assert true;
+		Trivia trivia = new Trivia();
+		assertTrue(trivia.add("isPlayable1"));
+		assertFalse(trivia.isPlayable());
+		assertTrue(trivia.add("isPlayable2"));
+		assertTrue(trivia.isPlayable());
+		assertTrue(trivia.add("isPlayable3"));
+		assertTrue(trivia.isPlayable());
 	}
 
 	@Test
 	public void add() {
-		assert true;
+		Trivia trivia = new Trivia();
+		assertTrue(trivia.add("add"));
 	}
 
 	@Test
 	public void howManyPlayers() {
-		assert true;
+		Trivia trivia = new Trivia();
+		assertTrue(trivia.add("howManyPlayers1"));
+		assertTrue(trivia.add("howManyPlayers2"));
+		assertTrue(trivia.add("howManyPlayers3"));
+		assertEquals(3, trivia.howManyPlayers());
 	}
 
 	@Test
 	public void roll() {
-		assert true;
+		Trivia trivia = new Trivia();
+		trivia.add("user");
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		assertFalse(trivia.isGettingOutOfPenaltyBox);
+		trivia.wrongAnswer();
+		trivia.roll(1);
+		assertTrue(trivia.isGettingOutOfPenaltyBox);
+		trivia.roll(2);
+		assertFalse(trivia.isGettingOutOfPenaltyBox);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		trivia.roll(1);
+		assertTrue(trivia.isGettingOutOfPenaltyBox);
 	}
 
 	@Test
 	public void wasCorrectlyAnswered() {
-		assert true;
+		Trivia trivia = new Trivia();
+		trivia.add("WasCorrectlyAnswered");
+		assertTrue(trivia.wasCorrectlyAnswered());
+		trivia.wrongAnswer();
+		assertTrue(trivia.wasCorrectlyAnswered());
 	}
 
 	@Test
 	public void wrongAnswer() {
-		assert true;
+		Trivia trivia = new Trivia();
+		trivia.add("wrongAnswer");
+		trivia.wrongAnswer();
+		assertEquals(0, trivia.currentPlayer);
+		trivia.add("wrongAnswerBis");
+		trivia.wrongAnswer();
+		assertEquals(1, trivia.currentPlayer);
 	}
 
 }
