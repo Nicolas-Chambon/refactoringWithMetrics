@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.froyo</groupId>
     <artifactId>Trivia</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -12,9 +12,9 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <sonar.projectKey>com.froyo:refactoringkata</sonar.projectKey>
+        <sonar.projectKey>com.froyo:Trivia</sonar.projectKey>
         <sonar.host.url>http://thedawndev.fr:9001</sonar.host.url>
-        <sonar.login>5ed72149bcd7ad53c6f0d45c1289bab9a97d0ddf</sonar.login>
+        <sonar.login>64b3bf5bb5aef4d91a8c173a099b7ecd9a55942f</sonar.login>
         <sonar.junit.reportPaths>target/surefire-reports/</sonar.junit.reportPaths>
 
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
