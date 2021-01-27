@@ -1,3 +1,4 @@
+def success = true;
 
 pipeline {
     agent {
@@ -11,13 +12,25 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
+            post {
+               failure {
+                  script { success = false }
+               }
+            }
         }
         stage('Test') {
+            when { expression { success == true } }
             steps {
                 sh 'mvn test'
             }
+            post {
+               failure {
+                  script { success = false }
+               }
+            }
         }
         stage('Code Quality') {
+            when { expression { success == true } }
             steps {
                 sh 'mvn sonar:sonar'
             }
